@@ -1,0 +1,18 @@
+<h1>Testje</h1>
+<a href="index.html">Home</a>
+<button onclick="huppakee16()">huppa</button>
+<script>
+    function huppakee16(){
+        fetch("http://127.0.0.1:5000/gmet100")
+        .then(r => r.json())
+        .then(d => verwerkfunctie(d))
+    }
+    function verwerkfunctie(eerste){
+        console.log(eerste)
+        document.getElementById("uitkomst").innerHTML= "";
+        for(let i = 0; i < eerste.length; i++){
+            document.getElementById("uitkomst").innerHTML += eerste[i].Age+"<br>";
+    }
+    }
+</script>
+<div id="uitkomst"></div>
